@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Rave</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+
+    <div class="container-fluid pageContainer">
+      <div class="clearBox">
+        <div class="row searchRow">
+
+          <input type="text" class="search" placeholder="Search">
+          <div class="magnifyIcon">
+            <img src="./assets/Vector.png" alt="magnify icon" class="magnifyIconPic">
+          </div>
+          <div class="listIcon">
+            <img src="./assets/ios-list.png" alt="list icon" class="listIconPic">
+          </div>
+
+        </div>
+
+
+        <div class="row currentWeatherRow">
+          <div class="todayBox">
+            <div class="starBox"></div>
+            <!-- <img class="starUnclicked" src="./assets/StarUnclicked.png" alt="star unclicked"> -->
+            <div class="row degreeRow">
+              <div class="clearDay"></div>
+              <div class="degree">
+                <h1 class="degreeText">0°</h1>
+              </div>
+            </div>
+
+            <div class="row cityName">
+              <h1 class="cityNameText">Stockton, CA</h1>
+            </div>
+
+            <div class="row weatherStatus">
+              <h1 class="weatherClearDay">Clear</h1>
+            </div>
+          </div>
+
+          <div class="lineBox">
+            <div class="line"></div>
+          </div>
+
+          <div class="morningBox">
+            <div class="time">7 AM</div>
+            <div class="morningClear"></div>
+            <div class="morningDegree">36°</div>
+          </div>
+
+          <div class="noonBox">
+            <div class="timeNoon">12 PM</div>
+            <div class="morningRain"></div>
+            <div class="noonDegree">58°</div>
+          </div>
+
+          <div class="nightBox">
+            <div class="timeNight">5 PM</div>
+            <div class="morningPartlyCloudy"></div>
+            <div class="nightDegree">52°</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row fiveDayForecast">
+
+        <div class="dayOneBox">
+          
+        </div>
+        <div class="dayTwoBox"></div>
+        <div class="dayThreeBox"></div>
+        <div class="dayFourBox"></div>
+        <div class="dayFiveBox"></div>
+
+      </div>
+    </div>
+
+    <script src="./js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

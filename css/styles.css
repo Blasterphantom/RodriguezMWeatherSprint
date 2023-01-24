@@ -1,0 +1,288 @@
+@font-face {
+    font-family: Inter;
+    src: url(../assets/InterOne/static/Inter-Regular.ttf);
+}
+
+body{
+    background-image: url(../assets/background.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 100vh;
+}
+
+.pageContainer{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clearBox{
+    width: 80%;
+    height: 74%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(7.5px);
+}
+
+.searchRow{
+    padding: 0;
+    margin: 0;
+    height: 57px;
+    margin-top: 7%;
+}
+
+.search{
+    width: 40%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* backdrop-filter: blur(10px); */
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    margin-left: 5.68%;
+    border: none;
+}
+
+.magnifyIcon{
+    height: 100%;
+    width: 57px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(10px); */
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.listIcon{
+    height: 100%;
+    width: 57px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(10px); */
+    padding: 0;
+}
+
+.currentWeatherRow{
+    margin: 0;
+    padding: 0;
+    height: 226.35px;
+    margin-top: 35.66px;
+    margin-bottom: 98px;
+}
+
+.todayBox{
+    width: 39.4%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+/* .starUnlicked{
+    width: 34.12;
+    height: 31.69;
+} */
+
+.starBox{
+    width: 34.12px;
+    height: 31.69px;
+    background-image: url(../assets/StarUnclicked.png);
+    position: absolute;
+    left: 14.75%;
+    top: 0;
+}
+
+.clearDay{
+    background-image: url(../assets/Clear.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.degreeRow{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.degree{
+    width: 142px;
+    height: 131px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.degreeText{
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 85px;
+    color: white;
+}
+
+.cityName{
+    padding: 0;
+    margin: 0;
+}
+
+.cityNameText{
+    color: white;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    width: 228px;
+}
+
+.weatherStatus{
+    padding: 0;
+    margin: 0;
+}
+
+.weatherClearDay{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    color: rgba(176, 176, 176, 0.7);
+    width: 228px;
+}
+
+.lineBox{
+    padding: 0;
+    height: 100%;
+    width: 0.5%;
+    display: flex;
+    align-items: center;
+}
+
+.line{
+    height: 191px;
+    width: 100%;
+    background-color: white;
+}
+
+.morningBox{
+    width: 20%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.noonBox{
+    width: 20%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nightBox{
+    width: 20%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.time{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.morningClear{
+    width: 48px;
+    height: 45px;
+    background-image: url(../assets/Clear.png);
+    background-position: center;
+    background-size: cover;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.morningDegree{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.timeNoon{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.morningPartlyCloudy{
+    width: 48px;
+    height: 45px;
+    background-image: url(../assets/PartlyCloudy.png);
+    background-position: center;
+    background-size: cover;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.noonDegree{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.timeNight{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.morningRain{
+    width: 48px;
+    height: 45px;
+    background-image: url(../assets/Rain.png);
+    background-position: center;
+    background-size: cover;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.nightDegree{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.fiveDayForecast{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
