@@ -283,6 +283,55 @@ body{
 .fiveDayForecast{
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.dayOneBox{
+    width: 184px;
+    height: 251px;
+    margin: 0;
+    padding: 0;
+    background: rgba(217, 217, 217, 0.2);
+    box-shadow: inset -1px 1px 0px 1px rgba(224, 224, 224, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dayOne{
+    color: white;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+}
+
+.fiveDayClear{
+    width: 74px;
+    height: 69px;
+    background-image: url(../assets/Clear.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.fiveDayDegree{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+}
+
+.fiveDayLow{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(176, 176, 176, 0.9);
 }
