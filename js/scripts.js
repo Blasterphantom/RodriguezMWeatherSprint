@@ -116,9 +116,17 @@ async function asyncGetData2(url){
     {
         degreeIcon.className = "rainDay";
     }
-    else if(weatherIcon == 'Haze')
+    else if(weatherIcon === 'Haze')
     {
         degreeIcon.className = "hazeDay";
+    }
+    else if(weatherIcon === 'Drizzle')
+    {
+        degreeIcon.className = "drizzleDay";
+    }
+    else if(weatherIcon === 'Thunderstorm')
+    {
+        degreeIcon.className = "thunderstormDay";
     }
     
     // console.log(asyncPokeApi.abilities[1].ability.name);

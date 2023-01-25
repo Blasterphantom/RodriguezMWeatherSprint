@@ -161,6 +161,22 @@ body{
     height: 98px;
 }
 
+.drizzleDay{
+    background-image: url(../assets/Drizzle.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.thunderstormDay{
+    background-image: url(../assets/Thunderstorms.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
 .degreeRow{
     margin: 0;
     padding: 0;
