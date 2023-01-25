@@ -75,12 +75,24 @@ body{
     padding: 0;
 }
 
+.listIcon2{
+    height: 100%;
+    width: 57px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(10px); */
+    padding: 0;
+}
+
 .currentWeatherRow{
     margin: 0;
     padding: 0;
     height: 226.35px;
-    margin-top: 35.66px;
-    margin-bottom: 98px;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 .todayBox{
@@ -111,6 +123,38 @@ body{
 
 .clearDay{
     background-image: url(../assets/Clear.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.cloudDay{
+    background-image: url(../assets/Cloudy.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.snowDay{
+    background-image: url(../assets/SNow.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.rainDay{
+    background-image: url(../assets/Rain.png);
+    background-position: center;
+    background-size: cover;
+    width: 118px;
+    height: 98px;
+}
+
+.hazeDay{
+    background-image: url(../assets/Haze.png);
     background-position: center;
     background-size: cover;
     width: 118px;
@@ -283,15 +327,15 @@ body{
 .fiveDayForecast{
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 33%;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
 .dayOneBox{
-    width: 184px;
-    height: 251px;
+    width: 16%;
+    height: 100%;
     margin: 0;
     padding: 0;
     background: rgba(217, 217, 217, 0.2);

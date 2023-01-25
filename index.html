@@ -11,36 +11,36 @@
 
     <div class="container-fluid pageContainer">
       <div class="clearBox">
-        <div class="row searchRow">
+        <div class="row searchRow" id="searchRow">
 
-          <input type="text" class="search" placeholder="Search">
-          <div class="magnifyIcon">
+          <input type="text" class="search" id="searchInput" placeholder="Search">
+          <a class="magnifyIcon" id="searchClick">
             <img src="./assets/Vector.png" alt="magnify icon" class="magnifyIconPic">
-          </div>
-          <div class="listIcon">
+          </a>
+          <a class="listIcon" id="favoritesToggle" href="#">
             <img src="./assets/ios-list.png" alt="list icon" class="listIconPic">
-          </div>
+          </a>
 
         </div>
 
 
-        <div class="row currentWeatherRow">
+        <div class="row currentWeatherRow" id="currentWeatherRow">
           <div class="todayBox">
             <div class="starBox"></div>
             <!-- <img class="starUnclicked" src="./assets/StarUnclicked.png" alt="star unclicked"> -->
             <div class="row degreeRow">
-              <div class="clearDay"></div>
+              <div class="clearDay" id="degreeIcon"></div>
               <div class="degree">
-                <h1 class="degreeText">0°</h1>
+                <h1 class="degreeText" id="degreeTextId">0°</h1>
               </div>
             </div>
 
             <div class="row cityName">
-              <h1 class="cityNameText">Stockton, CA</h1>
+              <h1 class="cityNameText" id="cityNameText">Stockton, California</h1>
             </div>
 
             <div class="row weatherStatus">
-              <h1 class="weatherClearDay">Clear</h1>
+              <h1 class="weatherClearDay" id="weatherDayId">Clear</h1>
             </div>
           </div>
 
@@ -49,13 +49,13 @@
           </div>
 
           <div class="morningBox">
-            <div class="time">7 AM</div>
+            <div class="time">Min</div>
             <div class="morningClear"></div>
             <div class="morningDegree">36°</div>
           </div>
 
           <div class="noonBox">
-            <div class="timeNoon">12 PM</div>
+            <div class="timeNoon">Max</div>
             <div class="morningRain"></div>
             <div class="noonDegree">58°</div>
           </div>
@@ -68,7 +68,7 @@
         </div>
 
 
-        <div class="row fiveDayForecast">
+        <div class="row fiveDayForecast" id="fiveDayForecast">
 
           <div class="dayOneBox">
             <div class="dayOne">TUE</div>
@@ -101,6 +101,19 @@
             <div class="fiveDayLow">L: 43°</div>
           </div>
   
+        </div>
+
+
+        <div class="row searchRow" id="searchRow2">
+
+          <input type="text" class="search" placeholder="Search">
+          <div class="magnifyIcon">
+            <img src="./assets/Vector.png" alt="magnify icon" class="magnifyIconPic">
+          </div>
+          <a class="listIcon2" id="favoritesToggle2" href="#">
+            <img src="./assets/favoriteToggle.png" alt="list icon" class="listIconPic">
+          </a>
+
         </div>
 
       </div>
