@@ -97,7 +97,7 @@ searchClick.addEventListener("click", function(){
     let searchText = searchInput.value;
     console.log(searchText);
 
-    let urlName = "http://api.openweathermap.org/geo/1.0/direct?q="+ searchText +"&limit=5&"+ apiKey +"&units=imperial";
+    let urlName = "https://api.openweathermap.org/geo/1.0/direct?q="+ searchText +"&limit=5&"+ apiKey +"&units=imperial";
 
     asyncGetData(urlName);
 
@@ -688,7 +688,7 @@ function CreateElements(){
                 person.remove();
             })
             // let searchTexted = person;
-            // let urlName4 = "http://api.openweathermap.org/geo/1.0/direct?q="+ searchTexted +"&limit=5&"+ apiKey +"&units=imperial";
+            // let urlName4 = "https://api.openweathermap.org/geo/1.0/direct?q="+ searchTexted +"&limit=5&"+ apiKey +"&units=imperial";
             // asyncGetData4(urlName4);
 
             // let rowOne = document.createElement("row");
