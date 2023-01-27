@@ -537,3 +537,24 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.favoriteBody{
+    margin: 0;
+    padding: 0;
+    width: 28%;
+    margin: 2%;
+    height: auto;
+}
+
+.btn-danger{
+    width: 200px;
+    height: 50px;
+}
+
+.pText{
+    font-size: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

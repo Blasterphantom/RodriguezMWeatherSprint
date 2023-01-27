@@ -1,5 +1,16 @@
 import { saveToLocalStorageByName, GetLocalStorage, RemoveFromLocalStorage, favorites } from "./localStorage.js";
 
+import { prod, dev } from "./environment.js";
+
+let apiKey = '&appid=';
+
+if(prod.isLive == true)
+{
+    apiKey += prod.apiKey;
+}else{
+    apiKey += dev.apiKey;
+}
+
 let favoritesToggle = document.getElementById("favoritesToggle");
 let favoritesToggle2 = document.getElementById("favoritesToggle2");
 let searchRow = document.getElementById("searchRow");
@@ -47,13 +58,20 @@ let dayFiveId = document.getElementById("dayFiveId");
 let favoriteAddRemove = document.getElementById("favoriteAddRemove");
 let favoriteRow = document.getElementById("favoriteRow");
 
+let tempFav;
+
 let latitude = "";
 let longitude = "";
+let latitude2 = "";
+let longitude2 = "";
 let asyncPokeApi;
 let asyncPokeApi2;
 let asyncPokeApi3;
+let asyncPokeApi4;
+let asyncPokeApi5;
 
 let tempNumber = "";
+let tempNumber2 = "";
 let arr = [];
 
 searchRow2.style.display = "none";
@@ -79,7 +97,7 @@ searchClick.addEventListener("click", function(){
     let searchText = searchInput.value;
     console.log(searchText);
 
-    let urlName = "http://api.openweathermap.org/geo/1.0/direct?q="+ searchText +"&limit=5&appid=a8dee87c18a78757d839fe472c22cfad&units=imperial";
+    let urlName = "http://api.openweathermap.org/geo/1.0/direct?q="+ searchText +"&limit=5&"+ apiKey +"&units=imperial";
 
     asyncGetData(urlName);
 
@@ -127,6 +145,24 @@ async function asyncGetData(url){
     // info1.innerHTML = asyncPokeApi.name;
     // info2.innerHTML = asyncPokeApi.moves[9].move.name;
     // info3.innerHTML = asyncPokeApi.moves[39].move.name;
+}
+
+async function asyncGetData4(url){
+    const promise = await fetch(url);
+    const data = await promise.json();
+
+    asyncPokeApi4 = data;
+
+    console.log(asyncPokeApi4);
+
+    latitude2 = asyncPokeApi4[0].lat;
+    console.log(latitude);
+
+    longitude2 = asyncPokeApi4[0].lon;
+    console.log(longitude);
+
+    GetLatAndLong2();
+
 }
 
 async function asyncGetData2(url){
@@ -198,6 +234,70 @@ async function asyncGetData2(url){
     GetDayOfWeek();
 
     GetFiveDay();
+}
+
+async function asyncGetData20(url){
+    const promise = await fetch(url);
+    const data = await promise.json();
+
+    asyncPokeApi5 = data;
+
+    console.log(asyncPokeApi5);
+
+    console.log(asyncPokeApi5.weather[0].icon);
+
+    tempNumber2 = asyncPokeApi5.main.temp;
+
+    tempFav.innerHTML = Math.floor(tempNumber2);
+
+
+    // console.log(weatherIcon);
+    // if(weatherIcon === 'Clear')
+    // {
+    //     degreeIcon.className = "clearDay";
+    // }
+    // else if(weatherIcon === 'Clouds')
+    // {
+    //     degreeIcon.className = "cloudDay";
+    // }
+    // else if(weatherIcon === 'Snow')
+    // {
+    //     degreeIcon.className = "snowDay";
+    // }
+    // else if(weatherIcon === 'Rain')
+    // {
+    //     degreeIcon.className = "rainDay";
+    // }
+    // else if(weatherIcon === 'Haze')
+    // {
+    //     degreeIcon.className = "hazeDay";
+    // }
+    // else if(weatherIcon === 'Drizzle')
+    // {
+    //     degreeIcon.className = "drizzleDay";
+    // }
+    // else if(weatherIcon === 'Thunderstorm')
+    // {
+    //     degreeIcon.className = "thunderstormDay";
+    // }
+    
+    // // console.log(asyncPokeApi.abilities[1].ability.name);
+
+    // // info1.innerHTML = asyncPokeApi.name;
+    // // info2.innerHTML = asyncPokeApi.moves[9].move.name;
+    // // info3.innerHTML = asyncPokeApi.moves[39].move.name;
+    // let minTempVar = asyncPokeApi2.main.temp_min;
+    // minTemp.innerHTML = Math.floor(minTempVar) + "°";
+
+    // let maxTempVar = asyncPokeApi2.main.temp_max;
+    // maxTemp.innerHTML = Math.floor(maxTempVar) + "°";
+
+    // let minStatus = asyncPokeApi2.weather[0].main;
+    // GetWeatherIcon2(minStatus,weatherOne);
+
+    // let maxStatus = asyncPokeApi2.weather[0].main;
+    // GetWeatherIcon2(maxStatus,weatherTwo);
+
 }
 
 async function asyncGetDataFiveDay(url){
@@ -403,13 +503,20 @@ async function asyncGetDataFiveDay(url){
 
 function GetLatAndLong(){
     // console.log(latitude);
-    let urlName2 = "https://api.openweathermap.org/data/2.5/weather?lat="+ latitude +"&lon="+ longitude +"&appid=a8dee87c18a78757d839fe472c22cfad&units=imperial";
+    let urlName2 = "https://api.openweathermap.org/data/2.5/weather?lat="+ latitude +"&lon="+ longitude + apiKey +"&units=imperial";
 
     asyncGetData2(urlName2);
 }
 
+function GetLatAndLong2(){
+    // console.log(latitude);
+    let urlName5 = "https://api.openweathermap.org/data/2.5/weather?lat="+ latitude2 +"&lon="+ longitude2 + apiKey +"&units=imperial";
+
+    asyncGetData20(urlName5);
+}
+
 function GetFiveDay(){
-    let urlName3 = "https://api.openweathermap.org/data/2.5/forecast?lat="+ latitude +"&lon="+ longitude +"&appid=a8dee87c18a78757d839fe472c22cfad&units=imperial";
+    let urlName3 = "https://api.openweathermap.org/data/2.5/forecast?lat="+ latitude +"&lon="+ longitude + apiKey +"&units=imperial";
 
     
 
@@ -570,6 +677,7 @@ function CreateElements(){
         favorites.map(person => {
             let p = document.createElement('p');
             p.textContent = person;
+            p.className = "pText";
     
             let deleteBtn = document.createElement('button');
             deleteBtn.className = 'btn btn-danger';
@@ -577,7 +685,34 @@ function CreateElements(){
             deleteBtn.type = 'button';
             deleteBtn.addEventListener("click", function(){
                 RemoveFromLocalStorage(person);
+                person.remove();
             })
+            // let searchTexted = person;
+            // let urlName4 = "http://api.openweathermap.org/geo/1.0/direct?q="+ searchTexted +"&limit=5&"+ apiKey +"&units=imperial";
+            // asyncGetData4(urlName4);
+
+            // let rowOne = document.createElement("row");
+            // rowOne.className = "rowOneCreate";
+
+
+            // let weatherPic = document.createElement("div");
+            // weatherPic.className = "weatherPicCreate";
+
+            // tempFav = document.createElement("h1");
+            // tempFav.className = "tempFaveCreate";
+
+
+            // let rowTwo = document.createElement("row");
+            // rowTwo.className = "rowTwoCreate";
+
+            // let bodyDiv = document.createElement("div");
+            // bodyDiv.className = "favoriteBody";
+
+            // rowOne.appendChild(weatherPic);
+            // rowOne.appendChild(tempFav);
+
+            // bodyDiv.appendChild(rowOne);
+            // bodyDiv.appendChild(rowTwo);
     
             favoriteRow.appendChild(p);
             favoriteRow.appendChild(deleteBtn);
